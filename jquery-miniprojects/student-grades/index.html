@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Student Grades</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Adauga Note Studenti</h1>
+      <form id="grade-form" class="form">
+        <input
+          type="text"
+          id="student-name"
+          placeholder="Introdu numele studentului"
+          required
+        />
+        <input
+          type="number"
+          id="student-grade"
+          placeholder="Introdu nota studentului"
+          min="1"
+          max="10"
+          requiered
+        />
+        <button type="submit" class="btn">Adauga</button>
+      </form>
+
+      <h2>Lista Studentilor</h2>
+      <ul id="students-list"></ul>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>

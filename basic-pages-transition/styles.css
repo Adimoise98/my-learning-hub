@@ -1,0 +1,137 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --page1-color: steelblue;
+  --page2-color: tan;
+  --page3-color: teal;
+  --page4-color: slateblue;
+  --animate-speed: 2s;
+}
+
+html,
+body {
+  font-family: "Poppins", sans-serif;
+  scroll-behavior: smooth;
+}
+
+.page {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 3rem;
+  color: #fff;
+
+  h1 {
+    font-size: 4rem;
+    line-height: 1.2;
+    margin: 2rem;
+  }
+
+  p {
+    font-size: 1.3rem;
+  }
+}
+
+/* Page colors */
+
+#page1 {
+  background-color: var(--page1-color);
+}
+#page2 {
+  background-color: var(--page2-color);
+}
+#page3 {
+  background-color: var(--page3-color);
+}
+#page4 {
+  background-color: var(--page4-color);
+}
+
+/* buttons */
+
+.btn {
+  display: inline-block;
+  padding: 1rem 2rem;
+  background-color: lightgray;
+  color: #333;
+  text-decoration: none;
+  margin: 3rem;
+  font-size: 1.1rem;
+  border: none;
+  transition: all 0.5 ease-in;
+  min-width: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+
+  &:hover {
+    background-color: #333;
+    color: #fff;
+  }
+}
+
+.btn-dark {
+  background-color: #333;
+  color: #fff;
+
+  &:hover {
+    opacity: 0.9;
+  }
+}
+
+.btn-container {
+  display: flex;
+  flex-direction: row;
+  align-content: space-evenly;
+}
+
+#page1 {
+  h1 {
+    transform: translateY(-1200px);
+    animation: headingMove var(--animate-speed) forwards ease-in;
+  }
+  p {
+    transform: translateX(-1800px);
+    animation: textMove var(--animate-speed) forwards ease-in;
+  }
+  .btn {
+    transform: translateX(1800px);
+    animation: btnMove var(--animate-speed) forwards ease-in;
+  }
+}
+
+@keyframes headingMove {
+  to {
+    transform: translateY(0);
+  }
+}
+@keyframes textMove {
+  to {
+    transform: translateX(0);
+  }
+}
+@keyframes btnMove {
+  to {
+    transform: translateX(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .page {
+    h1 {
+      font-size: 3.5rem;
+    }
+
+    p {
+      font-size: 1.1rem;
+    }
+  }
+}
